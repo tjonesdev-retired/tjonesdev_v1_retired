@@ -1,0 +1,459 @@
+@charset "utf-8";
+body {
+  min-width: 275px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  --last-name: #5E7995;
+  --first-name: #1E3553;
+  --nav-icon: #ffffff;
+  --nav-hover: #3d5779;
+  --fancy-text: #96697D;
+}
+
+/* HEADER */
+header {
+  min-height: 490px;
+  height: 100vh;
+}
+nav {
+  display: flex;
+  background-color: var(--last-name);
+  width: 100%;
+  height: 4.3em;
+}
+nav ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+nav ul li {
+  display: inline-flex;
+  width: 100%;
+  height: 100%;
+}
+nav ul li a {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  color: var(--nav-icon);
+}
+nav ul li a:hover {
+  text-decoration: none;
+  color: var(--nav-icon);
+}
+nav ul li a:focus, nav ul li a:active {
+  color: var(--nav-icon);
+  text-decoration: none;
+}
+nav ul li .active {
+  background-color: var(--nav-hover);
+}
+nav ul li a i {
+  font-size: 2.3em;
+}
+nav ul li a span { /*Desktop Text*/
+  display: none;
+}
+#headerContent {
+  display: flex;
+  position: relative;
+  width: 100%;
+  min-height: 435px;
+  height: 85vh;
+  padding-top: 2.9em;
+  align-items: center;
+  flex-direction: column;
+}
+#headerContent:after {
+  content : "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-image: url('../images/mountains.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom center;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.headercontainer {
+  text-align: center;
+}
+#headerContent .logo {
+  width: 8.5em;
+  height: 8.5em;
+  margin: .7em 0;
+}
+#headerContent .fullname {
+  font-size: 2.6em;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin: 0;
+  padding: 0 .25em;
+  background-color: rgba(255, 255, 255, .7);
+  border-radius: 1.75em;
+}
+.fname {
+  color: var(--first-name);
+}
+.lname {
+  color: var(--last-name);
+}
+#headerContent .subtitle {
+  font-size: 1.8em;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: 300;
+  margin-top: .4em;
+  color: var(--last-name);
+}
+#headerContent .subtitle span {
+  padding: 0 .35em;
+  background-color: rgba(255, 255, 255, .7);
+  border-radius: 1.75em;
+}
+/* END HEADER */
+
+/* PAGE SECTIONS */
+.pagenav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 5.5em;
+}
+.pageheading {
+  font-size: 2em;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin: 0;
+  padding-left: .55em;
+}
+.pagenav a {
+  color: var(--first-name);
+  padding-right: 1.1em;
+}
+.pagenav a i {
+  font-size: 2em;
+}
+.pagecontent {
+  display: flex;
+  flex-direction: column;
+}
+#AboutMe:after, #ContactMe:after {
+  content : "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('../images/page-background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  opacity : .3;
+  z-index: -2;
+}
+/* END PAGE SECTION */
+
+/* ABOUT ME PAGE */
+#AboutMe {
+  position: relative;
+  margin-top: 1.5em;
+}
+#AboutMe .pagecontent {
+  flex-direction: row;
+  align-items: space-between;
+}
+.abouttext {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1em;
+  margin-left: .7em;
+  margin-right: 2em;
+}
+.abouttext p {
+  padding: .5em 1em;
+  margin-bottom: 1.4em;
+  background-color: rgba(255, 255, 255, .3);
+  border-radius: 5px;
+}
+.fancytext {
+  font-weight: bold;
+  color: var(--fancy-text);
+}
+.languages {
+  display: flex;
+  flex-direction: column;
+}
+.slick-slider {
+  background-color: rgba(255, 255, 255, .3);
+  border-radius: 5px;
+}
+.slick-list {
+  width: 5em !important;
+}
+.slick-slide {
+  height: 3.5em !important;
+  margin: 1.5em 0;
+}
+.slide-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.slide-image {
+  opacity: 1;
+  height: 100%;
+  width: 100%;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+.slide-overlay {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+.slide-container:hover .slide-image, .slide-container:focus .slide-image {
+  opacity: 0.3;
+}
+.slide-container:hover .slide-overlay, .slide-container:focus .slide-overlay {
+  opacity: 1;
+}
+.slide-text {
+  background-color: rgba(0, 0, 0, .6);
+  color: white;
+  font-size: 14px;
+  padding: .5em;
+  border-radius: 5px;
+}
+/* END ABOUT ME PAGE */
+
+/* MY PROJECTS PAGE */
+.projecttext {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 28em;
+  margin: 0 .7em;
+  padding: .7em 0 0 .7em;
+}
+/* END MY PROJECTS PAGE */
+
+/* CONTACT ME PAGE */
+#ContactMe {
+  position: relative;
+  padding-bottom: 2.9em;
+}
+.contacttext {
+  margin: 0 .7em 1.4em .7em;
+}
+.contacttext p {
+  align-items: center;
+  padding: .5em 1em;
+  font-style: italic;
+  background-color: rgba(255, 255, 255, .3);
+  border-radius: 5px;
+}
+.email {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.4em;
+  font-size: 1.2em;
+}
+.email i {
+  padding-right: .4em;
+  color: var(--first-name);
+  text-decoration: none;
+}
+.email a {
+  color: var(--first-name);
+  text-decoration: none;
+}
+.email a:hover {
+  text-decoration: underline;
+}
+.btns {
+  display: inline-flex;
+  justify-content: center;
+}
+.contactbtn {
+  margin: 0 1.4em;
+}
+.contactbtn a {
+  color: var(--first-name);
+}
+.contactbtn a:hover {
+  color: var(--fancy-text);
+}
+.contactbtn i {
+  font-size: 3.5em;
+}
+.contactbtn span {
+  display: none;
+}
+/* END CONTACT ME PAGE */
+
+/* FOOTER PAGE */
+footer {
+  display: flex;
+  background-color: var(--first-name);
+  padding-top: 2.9em;
+  flex-direction: column;
+}
+.footernav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  color: var(--nav-icon);
+}
+.footernav a {
+  padding: .4em;
+  color: var(--nav-icon);
+}
+footer small {
+  color: var(--last-name);
+  text-align: center;
+  margin: 1.4em 0;
+}
+/* END FOOTER PAGE */
+
+@media only screen and (min-width: 650px) {
+  body {
+    font-size: 18px;
+  }
+  nav {
+    height: 4em;
+  }
+  nav ul li a {
+    justify-content: center;
+    font-size: 20px;
+    letter-spacing: .05em;
+  }
+  nav ul li a i {
+    font-size: 2.1em;
+    padding-right: .3em;
+  }
+  nav ul li a span { /*Desktop Text*/
+    display: flex;
+    padding-top: .7em;
+    font-family: 'Open Sans Condensed';
+  }
+  #headerContent {
+    padding-top: .75em;
+    background-size: 100% 8.5em;
+  }
+  #headerContent .logo {
+    width: 9em;
+    height: 9em;
+  }
+  #headerContent .fullname {
+    font-size: 3em;
+  }
+  #headerContent .subtitle {
+    font-size: 2em;
+    margin-top: .3em;
+  }
+}
+@media only screen and (min-width: 875px) {
+  header {
+    display: flex;
+    flex-direction: row;
+  }
+  nav {
+    width: 7em;
+    min-height: 490px;
+    height: 100vh;
+    margin-left: 1em;
+  }
+  nav ul {
+    flex-direction: column;
+  }
+  nav ul li {
+    display: flex;
+  }
+  nav ul li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+  }
+  nav ul li a:hover {
+    background-color: var(--nav-hover);
+  }
+  nav ul li a i {
+    padding: 0;
+  }
+  nav ul li a span {
+    padding: 0;
+    padding-top: .4em;
+  }
+  #headerContent {
+    position: relative;
+    width: 100%;
+    min-height: 490px;
+    height: 100vh;
+    align-items: flex-start;
+    padding: 0;
+    margin-left: 1em;
+    background-image: none;
+    overflow: hidden;
+  }
+  #headerContent:after {
+    content : "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background-image: url('../images/mountains.svg');
+    background-repeat: no-repeat;
+    background-size: 100% 22em;
+    background-position: bottom right;
+    min-width: 950px;
+    width: 100%;
+    min-height: 490px;
+    height: 100vh;
+    z-index: -1;
+  }
+  .headercontainer {
+    display: flex;
+  }
+  #headerContent .logo {
+    width: 11.5em;
+    height: 11.5em;
+  }
+  #headerContent .fullname {
+    font-size: 4em;
+    margin: 0;
+    margin-top: 50px;
+    margin-left: 10px;
+  }
+  #headerContent .subtitle {
+    font-size: 2.3em;
+    margin-top: 0;
+    margin-left: 20px;
+    text-align: left;
+  }
+  #AboutMe {
+    margin-top: 0;
+  }
+  .contacttext {
+    margin-left: 1.38em;
+    margin-right: 1.38em;
+  }
+}
